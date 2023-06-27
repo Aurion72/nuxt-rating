@@ -90,7 +90,7 @@ npm run release
 [npm-downloads-href]: https://npmjs.com/package/nuxt-rating
 
 [license-src]: https://img.shields.io/npm/l/nuxt-rating.svg?style=flat&colorA=18181B&colorB=28CF8D
-[license-href]: https://npmjs.com/package/nuxt-rating
+[license-href]: https://npmjs.com/package/nuxt-rating/blob/main/LICENSE
 
 [nuxt-src]: https://img.shields.io/badge/Nuxt-18181B?logo=nuxt.js
 [nuxt-href]: https://nuxt.com
