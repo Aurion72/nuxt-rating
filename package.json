@@ -2,7 +2,7 @@
   "name": "nuxt-rating",
   "version": "1.0.0",
   "description": "Display or retrieve a score on a fully customisable scale.",
-  "repository": "your-org/my-module",
+  "repository": "Aurion72/nuxt-rating",
   "license": "MIT",
   "type": "module",
   "exports": {
