@@ -14,9 +14,7 @@ Find and replace all on all files (CMD+SHIFT+F):
 [![License][license-src]][license-href]
 [![Nuxt][nuxt-src]][nuxt-href]
 
-
-<img src="https://s11.gifyu.com/images/SQCpz.gif " alt="GIF de démonstration" width="300">
-
+<img src="https://s11.gifyu.com/images/SQCHN.gif" alt="GIF de démonstration" width="300">
 
 ## Features
 
