@@ -1,0 +1,46 @@
+{
+  "name": "nuxt-rating",
+  "version": "1.0.0",
+  "description": "Display or retrieve a score on a fully customisable scale.",
+  "repository": "your-org/my-module",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/types.d.ts",
+      "import": "./dist/module.mjs",
+      "require": "./dist/module.cjs"
+    }
+  },
+  "main": "./dist/module.cjs",
+  "types": "./dist/types.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "prepack": "nuxt-module-build",
+    "dev": "nuxi dev playground",
+    "dev:build": "nuxi build playground",
+    "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground",
+    "release": "npm run lint && npm run test && npm run prepack && changelogen --release && npm publish && git push --follow-tags",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "test:watch": "vitest watch"
+  },
+  "dependencies": {
+    "@nuxt/kit": "^3.6.1",
+    "sass": "^1.63.6"
+  },
+  "devDependencies": {
+    "@nuxt/devtools": "latest",
+    "@nuxt/eslint-config": "^0.1.1",
+    "@nuxt/module-builder": "^0.4.0",
+    "@nuxt/schema": "^3.6.1",
+    "@nuxt/test-utils": "^3.6.1",
+    "@types/node": "^18.16.18",
+    "changelogen": "^0.5.3",
+    "eslint": "^8.43.0",
+    "nuxt": "^3.6.1",
+    "vitest": "^0.31.4"
+  }
+}
