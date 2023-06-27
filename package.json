@@ -1,6 +1,6 @@
 {
   "name": "nuxt-rating",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Display or retrieve a score on a fully customisable scale.",
   "repository": "Aurion72/nuxt-rating",
   "packageManager": "pnpm@8.6.5",
