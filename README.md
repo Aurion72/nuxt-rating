@@ -14,6 +14,10 @@ Find and replace all on all files (CMD+SHIFT+F):
 [![License][license-src]][license-href]
 [![Nuxt][nuxt-src]][nuxt-href]
 
+
+![GIF de démonstration](https://s11.gifyu.com/images/SQCpz.gif)
+
+
 ## Features
 
 <!-- Highlight some of the features your module provide here -->
