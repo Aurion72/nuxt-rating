@@ -15,7 +15,7 @@ Find and replace all on all files (CMD+SHIFT+F):
 [![Nuxt][nuxt-src]][nuxt-href]
 
 
-![GIF de démonstration](https://s11.gifyu.com/images/SQCpz.gif)
+![GIF de démonstration](https://s11.gifyu.com/images/SQCpz.gif | width=300)
 
 
 ## Features
