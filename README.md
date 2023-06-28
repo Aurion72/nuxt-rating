@@ -73,7 +73,7 @@ The following props can be passed to customize the appearance and behavior of th
 The component emits the following events:
 
 - `ratingSelected`: Triggered when a rating level is selected. The event payload is the selected rating value.
-- `ratingHovered`: Triggered when the mouse hovers over the rating meter. The event payload is the selected rating value.
+- `ratingHovered`: Triggered when the mouse hovers over the rating meter. The event payload is the hovered rating value.
 
 <!-- Badges -->
 
