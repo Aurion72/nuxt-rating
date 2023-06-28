@@ -31,7 +31,7 @@ type Props = {
 
 const emit = defineEmits<{
   ratingSelected: [rate: number];
-  hoverRating: [event: MouseEvent];
+  ratingHovered: [event: number];
 }>();
 
 const props = withDefaults(defineProps<Props>(), {
@@ -63,7 +63,7 @@ const cssVars = computed(() => ({
 
 const handleMouseMove = (event: MouseEvent) => {
   if (props.readOnly) return;
-  emit("hoverRating", event);
+  emit("ratingHovered", calculateRating(event));
   hoveredRating.value = calculateRating(event);
 };
 
@@ -95,6 +95,7 @@ function calculateRating(event: MouseEvent): number {
   width: auto;
   display: inline-block;
   vertical-align: baseline;
+  height: 0px;
   font-size: var(--rating-size);
   cursor: var(--cursor-type);
 }
@@ -102,7 +103,7 @@ function calculateRating(event: MouseEvent): number {
 .average-rating::before {
   --percent: calc(var(--rating-value) / var(--rating-count) * 100%);
   content: var(--rating-content);
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   color: rgba(0, 0, 0, 0.2);
