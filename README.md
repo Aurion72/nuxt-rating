@@ -50,7 +50,7 @@ export default defineNuxtConfig({
 });
 ```
 
-3. Use `nuxt-rating` component `
+3. Use `nuxt-rating` component
 
 ```js
 <NuxtRating :read-only="false" :ratingValue="1.2" />
