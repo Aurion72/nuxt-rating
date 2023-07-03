@@ -18,7 +18,18 @@
 <script lang="ts" setup>
 
 import { computed, ref } from "vue";
-import type { Props } from '../types'
+
+// import type { Props } from '../types' #Regression due to https://github.com/nuxt/nuxt/issues/20936
+
+type Props = {
+  ratingCount?: number;
+  ratingSize?: string;
+  activeColor?: string;
+  inactiveColor?: string;
+  ratingValue?: number;
+  ratingContent?: string; 
+  readOnly?: boolean;
+};
 
 const emit = defineEmits<{
   ratingSelected: [rate: number];
