@@ -18,16 +18,7 @@
 <script lang="ts" setup>
 
 import { computed, ref } from "vue";
-
-type Props = {
-  ratingCount?: number;
-  ratingSize?: string;
-  activeColor?: string;
-  inactiveColor?: string;
-  ratingValue?: number;
-  ratingContent?: string; 
-  readOnly?: boolean;
-};
+import type { Props } from '../types'
 
 const emit = defineEmits<{
   ratingSelected: [rate: number];
@@ -95,15 +86,15 @@ function calculateRating(event: MouseEvent): number {
   width: auto;
   display: inline-block;
   vertical-align: baseline;
-  height: 0px;
   font-size: var(--rating-size);
   cursor: var(--cursor-type);
+  white-space: nowrap; /* Ajout de cette ligne */
 }
 
 .average-rating::before {
   --percent: calc(var(--rating-value) / var(--rating-count) * 100%);
   content: var(--rating-content);
-  position: relative;
+  position: absolute;
   top: 0;
   left: 0;
   color: rgba(0, 0, 0, 0.2);

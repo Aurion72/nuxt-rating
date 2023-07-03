@@ -75,6 +75,29 @@ The component emits the following events:
 - `ratingSelected`: Triggered when a rating level is selected. The event payload is the selected rating value.
 - `ratingHovered`: Triggered when the mouse hovers over the rating meter. The event payload is the hovered rating value.
 
+## Full example (Nuxt 3)
+
+<img src="https://i.postimg.cc/qvhQtkWk/Nuxt-Rating-Example2.png" alt="GIF de démonstration" width="381">
+
+```js
+<template>
+  <div>
+    <h1 style="margin-bottom: 0px;"> Nuxt 3 Rating Module </h1>
+    <NuxtRating :read-only="false" :ratingCount="10" :ratingSize="'40px'" :active-color="'red'" ratingContent="🞺" @rating-selected="logRating" :ratingValue="1.2" />
+  </div>
+</template>
+
+<script lang="ts">
+export default {
+  methods: {
+    logRating(event: number) {
+      console.log(event);
+    }
+  }
+};
+</script>
+```
+
 <!-- Badges -->
 
 [npm-version-src]: https://img.shields.io/npm/v/nuxt-rating/latest.svg?style=flat&colorA=18181B&colorB=28CF8D
