@@ -83,7 +83,14 @@ The component emits the following events:
 <template>
   <div>
     <h1 style="margin-bottom: 0px;"> Nuxt 3 Rating Module </h1>
-    <NuxtRating :read-only="false" :ratingCount="10" :ratingSize="'40px'" :active-color="'red'" ratingContent="🞺" @rating-selected="logRating" :ratingValue="1.2" />
+    <NuxtRating
+      :read-only="false"
+      :rating-count="10"
+      :rating-size="'40px'"
+      :active-color="'red'"
+      :rating-value="1.2"
+      rating-content="🞺"
+      @rating-selected="logRating" />
   </div>
 </template>
 
