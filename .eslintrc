@@ -8,19 +8,21 @@
   "parserOptions": {
     "parser": "@typescript-eslint/parser"
   },
-  "extends": [
-    "@nuxtjs/eslint-config-typescript",
-    "plugin:prettier/recommended",
-    "plugin:storybook/recommended"
-  ],
+  "extends": ["@nuxt/eslint-config"],
   "plugins": [],
   "rules": {
-    "import/no-named-as-default": "off",
-    "vue/no-multiple-template-root": "off",
-    "prettier/prettier": [
-      "warn",
+    "vue/html-closing-bracket-newline": "off",
+    "vue/singleline-html-element-content-newline": "off",
+    "vue/html-self-closing": [
+      "error",
       {
-        "endOfLine": "auto"
+        "html": {
+          "void": "always",
+          "normal": "never", // update this
+          "component": "always"
+        },
+        "svg": "always",
+        "math": "always"
       }
     ]
   }

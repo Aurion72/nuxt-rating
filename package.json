@@ -1,6 +1,6 @@
 {
   "name": "nuxt-rating",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "description": "Display or retrieve a score on a fully customisable scale.",
   "homepage": "https://github.com/Aurion72/nuxt-rating#readme",
   "repository": "Aurion72/nuxt-rating",
@@ -47,6 +47,7 @@
     "@nuxt/module-builder": "^0.4.0",
     "@nuxt/schema": "^3.6.1",
     "@nuxt/test-utils": "^3.6.1",
+    "@nuxtjs/eslint-config-typescript": "^12.0.0",
     "@testing-library/vue": "^7.0.0",
     "@types/node": "^18.16.18",
     "@vitejs/plugin-vue": "^4.2.3",
