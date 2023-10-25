@@ -49,6 +49,7 @@
   })
 
   const cssVars = computed(() => ({
+    'position': 'relative',
     '--active-color': props.activeColor,
     '--cursor-type': props.readOnly ? 'default' : 'pointer',
     '--inactive-color': props.inactiveColor,
