@@ -1,7 +1,6 @@
 import { defineNuxtModule, addComponentsDir, createResolver } from "@nuxt/kit";
 import { name, version } from "../package.json";
 
-// Module options TypeScript interface definition
 export interface ModuleOptions {}
 
 export default defineNuxtModule<ModuleOptions>({
@@ -14,7 +13,6 @@ export default defineNuxtModule<ModuleOptions>({
     },
     defaults: {},
   },
-  // Default configuration options of the Nuxt module
   defaults: {},
   setup() {
     const { resolve } = createResolver(import.meta.url);
