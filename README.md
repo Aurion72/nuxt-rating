@@ -26,6 +26,7 @@ Find and replace all on all files (CMD+SHIFT+F):
 - &nbsp; Customisable number of stars.
 - &nbsp; Create read-only stars.
 - &nbsp; SSR Friendly.
+- &nbsp; Display decimal ratings.
 
 ## Quick Setup
 
@@ -53,8 +54,10 @@ export default defineNuxtConfig({
 3. Use `nuxt-rating` component
 
 ```js
-<NuxtRating :read-only="false" :ratingValue="1.2" />
+<NuxtRating :read-only="false" :ratingValue="3.5" />
 ```
+
+<img src="https://i.postimg.cc/zBwLZ85C/Sans-titre.jpg" width="128">
 
 ## Props Explanation
 

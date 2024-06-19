@@ -1,28 +1,21 @@
 <template>
-  <div
-    role="slider"
-    :aria-valuemin="0"
-    :aria-valuemax="props.ratingCount"
-    :aria-valuenow="selectedRating"
-    :style="cssVars"
-    class="average-rating"
-    @mousemove="handleMouseMove"
-    @mouseleave="handleMouseLeave"
-    @click="handleClick"></div>
+  <div class="content-rating">
+    <div
+      role="slider"
+      :aria-valuemin="0"
+      :aria-valuemax="props.ratingCount"
+      :aria-valuenow="selectedRating"
+      :style="cssVars"
+      class="average-rating"
+      @mousemove="handleMouseMove"
+      @mouseleave="handleMouseLeave"
+      @click="handleClick"></div>
+  </div>
 </template>
 
 <script lang="ts" setup>
-  import { computed, ref } from 'vue'
-
-  type Props = {
-    ratingCount?: number
-    ratingSize?: string
-    activeColor?: string
-    inactiveColor?: string
-    ratingValue?: number
-    ratingContent?: string
-    readOnly?: boolean
-  }
+  import { computed, ref, watch } from 'vue'
+  import type { Props } from '../types'
 
   const emit = defineEmits<{
     ratingSelected: [rate: number]
@@ -42,9 +35,18 @@
   const selectedRating = ref(props.ratingValue)
   const hoveredRating = ref(0)
 
+  const percent = computed(() => (selectedRating.value / props.ratingCount) * 100 + '%')
+
   const ratingsContent = computed(() => {
     return Array(props.ratingCount).fill(props.ratingContent).join('')
   })
+
+  watch(
+    () => props.ratingValue,
+    newRating => {
+      selectedRating.value = newRating
+    },
+  )
 
   const cssVars = computed(() => ({
     '--active-color': props.activeColor,
@@ -54,6 +56,7 @@
     '--rating-count': props.ratingCount,
     '--rating-content': `"${ratingsContent.value}"`,
     '--rating-size': props.ratingSize,
+    '--percent': percent.value,
   }))
 
   const handleMouseMove = (event: MouseEvent) => {
@@ -74,15 +77,18 @@
   }
 
   function calculateRating(event: MouseEvent): number {
-    const ratingEl = document.querySelector('.average-rating')
+    const ratingEl = event.currentTarget as HTMLElement
     if (!ratingEl) return 0
-    const beforeRatingElement = window.getComputedStyle(ratingEl, '::before')
-    const width = parseFloat(beforeRatingElement.getPropertyValue('width').replace(/[^\d.-]/g, ''))
+    const width = ratingEl.clientWidth
     return Math.ceil((event.offsetX / width) * props.ratingCount)
   }
 </script>
 
 <style>
+  .content-rating {
+    display: flex;
+  }
+
   .average-rating {
     height: var(--rating-size);
     font-size: var(--rating-size);
@@ -95,7 +101,7 @@
   .average-rating::before {
     --percent: calc(var(--rating-value) / var(--rating-count) * 100%);
     content: var(--rating-content) !important;
-    position: absolute;
+    position: relative;
     background: linear-gradient(
       90deg,
       var(--active-color) var(--percent),
