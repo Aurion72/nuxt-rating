@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.1.6
+
+[compare changes](https://github.com/Aurion72/nuxt-rating/compare/v0.1.5...v0.1.6)
+
 ## 0.1.5
 
 ### Patch Changes
